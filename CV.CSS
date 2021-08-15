@@ -1,0 +1,58 @@
+*{
+    text-align: center;
+    color: red;
+}
+
+body{
+    background-image: url("views picture.jpg");
+    background-size: 100%;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-areas: 'header header header'
+    'nav main main';
+    background-color: rgb(241, 174, 86);
+    padding: 30px;
+    border: 2px solid white;
+    margin: 20px;
+}
+
+
+.item1, .item2, .item3{
+    text-align: center;
+    color: black;
+    background-color: rgb(214, 212, 212);
+    padding: 15px;
+    border: solid purple 5px;
+    margin: 3px;
+}
+
+.grid-contact{
+    display: grid;
+    grid-template-areas:
+    'header header header'
+    'first txt1 txt1'
+    'sec txt2 txt2'
+    'third txt3 txt3'
+    ;
+    background-color: rgb(241, 174, 86);
+    padding: 180px;
+    width: 10%;
+    border: 1px solid white;
+    margin: 0px;
+}
+
+item4 {
+    grid-area: header;
+    text-align: center;
+    color: black;
+}
+
+item5, item6, item7 {
+    text-align: center;
+    color: black;
+    margin: 7px;
+}
+ 
+
