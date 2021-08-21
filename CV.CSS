@@ -16,6 +16,15 @@ body{
     padding: 30px;
     border: 2px solid white;
     margin: 20px;
+    animation-name: nofAnimation;
+    animation-duration: 3s;
+    border-radius: 15%;
+    animation-iteration-count: infinite;
+}
+
+@keyframes nofAnimation {
+    from { background-color: rgb(241, 174, 86);}
+    to { background-color: rgb(218, 84, 84)}
 }
 
 
