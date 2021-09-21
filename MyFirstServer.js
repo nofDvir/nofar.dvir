@@ -1,12 +1,28 @@
-const http = require('http');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const sql = require('./db.js');
 
-http.createServer((req, res) => {
-    res.writeHead(200, {
-        'Content-Type': 'text/html'
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get('/', (rew, res) => {
+    res.send('Hello World!');
+});
+
+app.get("/students", function(req, res){
+    sql.query("SELECT * FROM students", (err, mysqlres) => {
+    if (err) {
+    console.log("error: ", err);
+    res.status(400).send({message: "error in getting all students: " + err});
+    return;
+    }
+    console.log("got all students...");
+    res.send(mysqlres);
+    return;
+    });
     });
 
-    res.write('Hello World!');
-
-    res.end();
-    
-}).listen(8080);
+app.listen(8080, () => {
+    console.log('listening on 8080');
+})
